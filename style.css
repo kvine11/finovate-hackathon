@@ -34,8 +34,20 @@ nav {
 }
 
 .top-nav img {
-    height: 40px;
-    width: auto;
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(102,126,234,0.15);
+    margin-right: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* subtle gradient to match navbar */
+    border: 2px solid #fff;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.top-nav img:hover {
+    box-shadow: 0 8px 32px rgba(102,126,234,0.25);
+    border-color: #805ad5;
 }
 
 .top-nav a {

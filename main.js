@@ -200,16 +200,19 @@ renderQuiz();
 // BUDGETING JOURNAL & CALCULATOR SECTION
 // =========================
 
+//grabs the neccesary items for DOM manipulation
 const entryTextarea = document.getElementById('journal-textarea');
 const saveBtn = document.getElementById('save-journal-btn');
 const entriesList = document.getElementById('journal-entries');
 const clearBtn = document.getElementById('clear-journal-btn');
 
+//fetch the journal entries using localStorage
 function getJournalEntries() {
     const entries = localStorage.getItem('budgetJournalEntries');
     return entries ? JSON.parse(entries) : [];
 }
 
+//save the entry to localstorage. includes entry and the date written. stores to local storage in a json file
 function saveJournalEntry(entryText) {
     const entries = getJournalEntries();
     const newEntry = {
@@ -220,6 +223,7 @@ function saveJournalEntry(entryText) {
     localStorage.setItem('budgetJournalEntries', JSON.stringify(entries));
 }
 
+//displays the journla entries by manipulating the DOM and creating a new list element for each entry
 function renderJournalEntries() {
     const entries = getJournalEntries();
     entriesList.innerHTML = '';
@@ -236,6 +240,7 @@ function renderJournalEntries() {
     });
 }
 
+//button event listeners
 saveBtn.addEventListener('click', function() {
     const text = entryTextarea.value.trim();
     if (!text) return;
