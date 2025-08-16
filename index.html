@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>FinanceU</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <nav>
+        <div class = 'top-nav'>
+            <img src = 'logo'>
+            <a id = 'flashcards'>Flashcards</a>
+            <a id = 'finance'>Finance Quiz<a>
+            <a id = 'budget-journal'> Budgeting Journal</a>
+            <a id = 'budget-calculator'>Budgeting Calculator</a>
+        </div>
+    </nav>
+
+    <section>
+        <div class = 'hero'>
+            <h1><span class="brand-title">FinanceU</span></h1>
+            <h1>Smarter Goals. Stronger Habits.</h1>
+            <p>Building financial confidence with tools that help you budget, save, and grow while making your goals achievable.</p>
+            <button id = 'get-started'>Get started</button>
+        </div>
+    </section>
+
+    <section>
+        <div class = 'about'>
+            <div>
+                About Our Project
+                <p>We believe that all teens should be able to learn how to finance, save, spend, and budget easily. Through interactive tools, clear explanations, and a friendly AI chatbot, we make financial literacy simple and engaging. Whether you're earning your first paycheck or saving up for a goal, we're here to guide you every step of the way. </p>
+            </div>
+
+            <!--possibly add motion to this using motion.dev library-->
+            <div>
+                <h3>Accessible</h3>
+                <p>We make this site accessible to all, allowing for teens being able to learn, log, and improve on their financial skills and abilities.</p>
+            </div>
+           
+            <div>
+                <h3>Teaching</h3>
+                <p>We teach teens what financing, budgeting, saving, and investing is. We provide quizzes to test and improve their abilities. We also offer outside resources and oppertunities to grow such as how to start investing.</p>
+            </div>
+
+            <div>
+                <h3>Enable</h3>
+                <p>We enable teens to be able to make their own decisions. We provide them with resources to help them be able to learn, try out, and finally enable them to do things by themselves.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class = 'flashcards'>
+        <div class="flashcard-container">
+            <div class="flashcard" id="myFlashcard">
+                <div class="front">Let's Review our Finance Terms!</div>
+                <div class="back"></div>
+            </div>
+            <button id = 'flip-card-btn'>Flip</button>
+            <button id = 'next-card-btn'>Next</button>
+        </div>
+    </section>
+
+
+    <section>
+        <form class = 'finance-quiz'>
+            Let's take a quiz over what you learned!
+            <ul class="quiz">
+                <li>
+                    <h4>Finance question 1 here</h4>
+                    <ul class="choices">
+                        <li>
+                            <label
+                                ><input type="radio" name="question0" value="A" /><span
+                                    >Answer choice 1</span
+                                ></label
+                            >
+                        </li>
+                        <li>
+                            <label
+                                ><input type="radio" name="question0" value="B" /><span
+                                    >Answer choice 2</span
+                                ></label
+                            >
+                        </li>
+                        <li>
+                            <label
+                                ><input type="radio" name="question0" value="C" /><span
+                                    >Answer choice 3</span
+                                ></label
+                            >
+                        </li>
+                        <li>
+                            <label
+                                ><input type="radio" name="question0" value="D" /><span
+                                    >Answer choice 4</span
+                                ></label
+                            >
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Finance question 2</h4>
+                    <ul class="choices">
+                        <li>
+                            <label
+                                ><input type="radio" name="question1" value="A" /><span
+                                    >Answer choice 1</span
+                                ></label
+                            >
+                        </li>
+                        <li>
+                            <label
+                                ><input type="radio" name="question1" value="B" /><span
+                                    >Answer choice 2</span
+                                ></label
+                            >
+                        </li>
+                        <li>
+                            <label
+                                ><input type="radio" name="question1" value="C" /><span
+                                    >Answer choice 3</span
+                                ></label
+                            >
+                        </li>
+                        <li>
+                            <label
+                                ><input type="radio" name="question1" value="D" /><span
+                                    >Answer choice 4</span
+                                ></label
+                            >
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Finance question 3</h4>
+                    <ul class="choices">
+                        <li>
+                            <label
+                                ><input type="radio" name="question2" value="A" /><span
+                                    >Answer choice 1</span
+                                ></label
+                            >
+                        </li>
+                        <li>
+                            <label
+                                ><input type="radio" name="question2" value="B" /><span
+                                    >Answer chioce 2</span
+                                ></label
+                            >
+                        </li>
+                        <li>
+                            <label
+                                ><input type="radio" name="question2" value="C" /><span
+                                    >Answer choice 3</span
+                                ></label
+                            >
+                        </li>
+                        <li>
+                            <label
+                                ><input type="radio" name="question2" value="D" /><span
+                                    >Answer chioce 4</span
+                                ></label
+                            >
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="view-results" onclick="returnScore()">View Results</button>
+            <span id="myresults" class="my-results">My results will appear here</span>
+        </form>
+    </section>
+
+    <section class = 'budgeting-journal'> 
+
+        <div>
+            <h4>Start your budget ideas here</h4>
+            <textarea id="journal-textarea" class="textarea" placeholder="write your budget ideas here"></textarea>
+            <button id="save-journal-btn">Save</button>
+            <button id = 'clear-journal-btn'>Clear Entries</button>
+        </div>
+        <div>
+            <h4>Your ideas</h4>
+            <ul id="journal-entries"></ul>
+        </div>
+    </section>
+
+    <section class = 'budget-calculator'>
+        <div class="headerBar">
+            <header>
+              <h1 class="title">My Budget Tracker</h1>
+                <label>Current Budget Goal Amount</label>
+                <input type = 'number' id = 'confirm-box'>
+                <button id = 'confirm'>Confirm</button>
+
+              <h2 class="topbar">Your Current Balance</h2>
+              <p>
+                <span class="currency">$</span>
+                <span class="balance"></span>
+              </p>
+              <h3>Total Saved: </h3>
+              <p>
+                <span class="currency">$</span>
+                <span class = "income"></span>
+              </p>
+              <header>
+          </div>
+          <div class="content">
+            <h3 class="secondTitle">Add a new transaction: </h3>
+            <div class="form">
+              <form id="expForm">
+                <div class="formLine left">
+                  <span for="type">Type:</span>
+                  <select id="type">
+                    <option value="chooseOne">Choose one...</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                  </select>
+                </div>
+
+                <div class="formLine right">
+                  <span for="name">Name:</span>
+                  <input type="text" id="name">
+                </div>
+                <div class="formLine right">
+                  <span for="amount">Amount:</span>
+                  <input type="text" id="amount">
+                </div>
+                <button type="submit" class="buttonSave">Add to transactions</button>
+                <button id = "clear-caluclator-btn">Clear</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="content">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Name</th>
+                  <th>Amount</th>
+                  <th>Options</th>
+                </tr>
+              </thead>
+              <tbody id="transactionTable"></tbody>
+            </table>
+          </div>
+    </section>
+
+
+
+
+
+    <script src = 'main.js'></script>
+    <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2RaBX4UXPAyGvmjOSfcOf";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+        </script>
+</body>
+</html>

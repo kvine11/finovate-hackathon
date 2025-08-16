@@ -1,0 +1,625 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8fafc;
+}
+
+/* Navigation */
+nav {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.top-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.top-nav img {
+    height: 40px;
+    width: auto;
+}
+
+.top-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.top-nav a:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+#get-started {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#get-started:hover {
+    background-color: #ff5252;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255,107,107,0.4);
+}
+
+.brand-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #2b6cb0 0%, #805ad5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.25), 0 0 2px #fff, 0 0 8px #fff;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    /* White outline for extra clarity */
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
+}
+
+/* About Section */
+.about {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.about > div {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.about > div:hover {
+    transform: translateY(-5px);
+}
+
+.about > div:first-child {
+    grid-column: 1 / -1;
+    text-align: center;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.about h3 {
+    color: #667eea;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.about > div:first-child h3 {
+    color: white;
+    font-size: 2rem;
+}
+
+/* Flashcards Section */
+.flashcards {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.flashcard-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.flashcard {
+    width: 300px;
+    height: 200px;
+    margin: 0 auto 2rem;
+    position: relative;
+    perspective: 1000px;
+}
+
+.flashcard .front,
+.flashcard .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.6s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.flashcard .front {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.flashcard .back {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flashcard.flipped .front {
+    transform: rotateY(-180deg);
+}
+
+.flashcard.flipped .back {
+    transform: rotateY(0deg);
+}
+
+.flashcard-container button {
+    background-color: #667eea;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.flashcard-container button:hover {
+    background-color: #5a67d8;
+    transform: translateY(-2px);
+}
+
+/* Quiz Section */
+.finance-quiz {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.quiz {
+    list-style: none;
+}
+
+.quiz > li {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.quiz h4 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.choices {
+    list-style: none;
+}
+
+.choices li {
+    margin-bottom: 0.5rem;
+}
+
+.choices label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.choices label:hover {
+    background-color: #e2e8f0;
+}
+
+.choices input[type="radio"] {
+    margin-right: 0.5rem;
+    accent-color: #667eea;
+}
+
+.view-results, #restart-quiz {
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.view-results:hover, #restart-quiz:hover {
+    background-color: #38a169;
+    transform: translateY(-2px);
+}
+
+.my-results {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #667eea;
+}
+
+/* Budgeting Journal */
+.budgeting-journal {
+    max-width: 1000px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.budgeting-journal > div {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.budgeting-journal h4 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+#save-journal-btn, #clear-journal-btn {
+    background-color: #667eea;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem 0.5rem 0 0;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#clear-journal-btn {
+    background-color: #e53e3e;
+}
+
+#save-journal-btn:hover {
+    background-color: #5a67d8;
+}
+
+#clear-journal-btn:hover {
+    background-color: #c53030;
+}
+
+#journal-entries {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#journal-entries li {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 3px solid #667eea;
+}
+
+/* Budget Calculator */
+.budget-calculator {
+    max-width: 1000px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+}
+
+.headerBar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.topbar {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.currency {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.balance, .income {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#confirm-box {
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#confirm {
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#confirm:hover {
+    background-color: #38a169;
+}
+
+.content {
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.content:last-child {
+    border-radius: 0 0 15px 15px;
+}
+
+.secondTitle {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.form {
+    margin-bottom: 2rem;
+}
+
+.formLine {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.formLine span {
+    min-width: 80px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.formLine select,
+.formLine input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.formLine select:focus,
+.formLine input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.buttonSave, #clear-caluclator-btn {
+    background-color: #667eea;
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    margin-right: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#clear-caluclator-btn {
+    background-color: #e53e3e;
+}
+
+.buttonSave:hover {
+    background-color: #5a67d8;
+}
+
+#clear-caluclator-btn:hover {
+    background-color: #c53030;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.table th {
+    background-color: #f8fafc;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.table tr:hover {
+    background-color: #f8fafc;
+}
+
+.deleteButton {
+    color: #e53e3e;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.deleteButton:hover {
+    color: #c53030;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .budgeting-journal {
+        grid-template-columns: 1fr;
+    }
+    
+    .top-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .formLine {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .formLine span {
+        min-width: auto;
+        margin-bottom: 0.5rem;
+    }
+    
+    .flashcard {
+        width: 250px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 2rem 1rem;
+    }
+    
+    .about,
+    .budget-calculator,
+    .budgeting-journal {
+        padding: 0 1rem;
+    }
+    
+    .flashcard {
+        width: 200px;
+        height: 120px;
+    }
+    
+    .flashcard .front,
+    .flashcard .back {
+        font-size: 1rem;
+    }
+}
+
+/* Goal Message Styling */
+#goal-message {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f0fff4;
+    border: 2px solid #48bb78;
+}
+
+/* Confetti Canvas */
+#confetti-canvas {
+    z-index: 1000;
+}
