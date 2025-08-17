@@ -52,7 +52,7 @@ FinanceU is an interactive web app designed to help teens and young adults build
 ## Credits
 
 - Logo and icons: Custom or open-source assets
-- Developed by [Your Name/Team]
+- Developed by Kevin Liu, Emma Sun, Matthew Yin
 
 ## License
 
